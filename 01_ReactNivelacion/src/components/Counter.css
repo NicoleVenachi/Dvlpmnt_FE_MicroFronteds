@@ -1,0 +1,12 @@
+div {
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+button {
+  cursor: pointer;
+  margin: 0 1rem;
+}

@@ -1,14 +1,30 @@
-import React, { Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
+import './Counter.css';
+import styled from '@emotion/styled';
+
+const BtnDiminish = styled.button`
+  background-color: white;
+  color: black;
+  &:hover {
+    background-color: #44eeb5;
+    font-weight: bold;
+  }
+`
 
 const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <Fragment>
+    <div>
       <h2>Counter: {count}</h2>
-      <button onClick={() => setCount(count - 1)}>-</button>
-      <button onClick={() => setCount(count + 1)}>+</button>
-    </Fragment>
+      <button style={{
+        padding: '10px 20px',
+        backgroundColor: 'blue',
+      }} onClick={() => setCount(count - 1)}>-</button>
+
+      <BtnDiminish onClick={() => setCount(count + 1)}>+</BtnDiminish>
+
+    </div >
   );
 };
 
