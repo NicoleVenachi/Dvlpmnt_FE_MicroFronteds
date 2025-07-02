@@ -1,12 +1,17 @@
-import React from 'react'
+import { lazy } from 'react'
 import Counter from './components/Counter'
-import Users from './components/Users'
+import { Suspense } from 'react'
+
+const Users = lazy(() => import('./components/Users'))
 
 const App = () => {
   return (
     <div className=''>
       <Counter />
-      <Users />
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Users />
+      </Suspense>
     </div>
   )
 }
