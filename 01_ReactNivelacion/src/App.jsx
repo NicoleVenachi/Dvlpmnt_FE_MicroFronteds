@@ -4,10 +4,10 @@ import Users from './components/Users'
 
 const App = () => {
   return (
-    // <div className=''>
-    //   <Counter />
-    // </div>
-    <Users />
+    <div className=''>
+      <Counter />
+      <Users />
+    </div>
   )
 }
 

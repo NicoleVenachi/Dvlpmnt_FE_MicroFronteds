@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 import './Counter.css';
 import styled from '@emotion/styled';
+import { handleCLick } from '../helpers/handleClick';
 
 const BtnDiminish = styled.button`
   background-color: white;
@@ -20,9 +21,9 @@ const Counter = () => {
       <button style={{
         padding: '10px 20px',
         backgroundColor: 'blue',
-      }} onClick={() => setCount(count - 1)}>-</button>
+      }} onClick={() => setCount(handleCLick(count, -1))}>-</button>
 
-      <BtnDiminish onClick={() => setCount(count + 1)}>+</BtnDiminish>
+      <BtnDiminish onClick={() => setCount(handleCLick(count, 10))}>+</BtnDiminish>
 
     </div >
   );
