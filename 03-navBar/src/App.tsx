@@ -1,12 +1,10 @@
 import ReactDOM from "react-dom/client";
-
-import "./index.css";
+import Navbar from "./components/Navbar";
 
 const App = () => (
-  <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: 03-navBar</div>
-    <div>Framework: react-19</div>
-  </div>
+  <>
+    <Navbar />
+  </>
 );
 
 const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);

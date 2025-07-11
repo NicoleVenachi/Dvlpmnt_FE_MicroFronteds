@@ -1,5 +1,6 @@
 export const mfConfig = {
-  name: "03_navBar",
-  exposes: {},
+  name: "navBar",
+  exposes: { "./Navbar": "./src/components/Navbar.tsx" },
   shared: ["react", "react-dom"],
+  filename: "remoteEntry.js",
 };

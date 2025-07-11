@@ -1,10 +1,11 @@
 import ReactDOM from "react-dom/client";
 
-import Navbar from "./components/Navbar";
+import Navbar from "navBar/Navbar"; // Importing the Navbar component from the remote module
 
 const App = () => (
   <>
     <Navbar />
+    <h1>Host app</h1>
   </>
 );
 
