@@ -4,7 +4,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav>
-      <h1>Shop component</h1>
+      <h1>Counter Micro-frontend</h1>
     </nav>
   )
 }
