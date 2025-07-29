@@ -4,7 +4,6 @@ import { rspack } from "@rspack/core";
 import * as RefreshPlugin from "@rspack/plugin-react-refresh";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 
-
 import { mfConfig } from "./module-federation.config";
 
 const isDev = process.env.NODE_ENV === "development";
@@ -22,7 +21,7 @@ export default defineConfig({
   },
 
   devServer: {
-    port: 3005,
+    port: process.env.PORT || 3005,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
   },
@@ -30,7 +29,7 @@ export default defineConfig({
     // You need to set a unique value that is not equal to other applications
     uniqueName: "03_navBar",
     // publicPath must be configured if using manifest
-    publicPath: "http://localhost:3005/",
+    publicPath: "https://reliable-biscochitos-221468.netlify.app/",
   },
 
   experiments: {

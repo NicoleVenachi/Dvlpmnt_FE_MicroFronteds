@@ -4,7 +4,6 @@ import { rspack } from "@rspack/core";
 import * as RefreshPlugin from "@rspack/plugin-react-refresh";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 
-
 import { mfConfig } from "./module-federation.config";
 
 const isDev = process.env.NODE_ENV === "development";
@@ -22,7 +21,7 @@ export default defineConfig({
   },
 
   devServer: {
-    port: 3006,
+    port: process.env.PORT || 3002,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
   },
@@ -30,7 +29,7 @@ export default defineConfig({
     // You need to set a unique value that is not equal to other applications
     uniqueName: "03_counter_mf",
     // publicPath must be configured if using manifest
-    publicPath: "http://localhost:3006/",
+    publicPath: "https://rococo-moxie-6c2497.netlify.app/",
   },
 
   experiments: {
