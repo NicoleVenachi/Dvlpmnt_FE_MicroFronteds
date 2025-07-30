@@ -5,8 +5,12 @@ const ColorPicker = () => {
 
   const handleChangeColor = (event: React.ChangeEvent<HTMLInputElement>) => setColor(event.target.value);
 
+  const handleSubmitSaveColor = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    alert(`Color saved: ${color}`);
+  };
   return (
-    <form>
+    <form onSubmit={handleSubmitSaveColor}>
       <input
         type="color"
         className="form-control"
@@ -30,7 +34,11 @@ const ColorPicker = () => {
               borderRadius: "100%",
             }}
           >
-          </div> {color} </h2>
+          </div>
+          {color}
+        </h2>
+
+        <button type="submit" className="btn btn-success" >Save Color</button>
       </div>
     </form>
   );
