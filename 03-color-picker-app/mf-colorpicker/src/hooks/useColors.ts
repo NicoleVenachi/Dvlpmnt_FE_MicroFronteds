@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useColors = () => {
   const [color, setColor] = useState("#000");
@@ -11,6 +11,10 @@ export const useColors = () => {
     event.preventDefault();
     setColorList([color, ...colorList]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("colorList", JSON.stringify(colorList));
+  }, [colorList]);
 
   return {
     color,
