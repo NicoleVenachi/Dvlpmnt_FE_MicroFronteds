@@ -18,6 +18,7 @@ const ColorPicker = ({ color, colorList, handleChangeColor, handleSubmitSaveColo
             height: "300px",
           }}
           title="Pick a color ..."
+          value={color}
           onChange={handleChangeColor}
         />
 

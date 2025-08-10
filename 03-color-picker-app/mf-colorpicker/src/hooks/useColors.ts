@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { getColorList, getLastColor } from "../helpers/getColors";
 
 export const useColors = () => {
-  const [color, setColor] = useState("#000");
-  const [colorList, setColorList] = useState<string[]>([]);
+  const [color, setColor] = useState(getLastColor());
+  const [colorList, setColorList] = useState<string[]>(getColorList());
 
   const handleChangeColor = (event: React.ChangeEvent<HTMLInputElement>) =>
     setColor(event.target.value);
