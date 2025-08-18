@@ -5,7 +5,9 @@ import ColorList from "./components/ColorList";
 
 const App = () => (
   <>
-    <ColorList></ColorList>
+    <ColorList colorsList={[]}></ColorList>
+
+    <ColorList colorsList={['#000', '#60da94', '#54b2dd', '#d8d873', '#25254d', '#f0f', '#da2c7d']}></ColorList>
   </>
 );
 
