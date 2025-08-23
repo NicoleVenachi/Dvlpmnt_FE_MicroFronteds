@@ -3,4 +3,5 @@ export declare const useColors: () => {
     colorList: string[];
     handleChangeColor: (event: React.ChangeEvent<HTMLInputElement>) => void;
     handleSubmitSaveColor: (event: React.FormEvent<HTMLFormElement>) => void;
+    handleClickClearColors: () => void;
 };
