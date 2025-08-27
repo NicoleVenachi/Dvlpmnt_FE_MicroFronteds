@@ -1,11 +1,11 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { NavLink } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'Home', href: '/home' },
+  { name: 'Characters', href: '/characters' },
+  { name: 'About', href: '/about' },
 ]
 
 function classNames(...classes) {
@@ -31,22 +31,24 @@ const Navbar = () => {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <h1 className='text-lg text-cyan-600'> DB App </h1>
+              <NavLink to="/" className='text-cyan-600 font-bold text-xl'> DB App</NavLink>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <a
+
+                  <NavLink
                     key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      item.current ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                      'rounded-md px-3 py-2 text-sm font-medium',
-                    )}
+                    to={item.href}
+                    className={({ isActive }) =>
+                      classNames(
+                        isActive ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
+                        'rounded-md px-3 py-2 text-sm font-medium',
+                      )
+                    }
                   >
                     {item.name}
-                  </a>
+                  </NavLink>
                 ))}
               </div>
             </div>
