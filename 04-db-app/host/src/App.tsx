@@ -1,12 +1,20 @@
 import ReactDOM from "react-dom/client";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import CharactersPage from "./pages/CharactersPage";
+
+
 
 const App = () => (
-  <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: host</div>
-    <div>Framework: react-19</div>
-  </div>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/characters" element={<CharactersPage />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
