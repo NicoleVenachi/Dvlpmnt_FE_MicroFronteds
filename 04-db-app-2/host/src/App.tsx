@@ -7,7 +7,6 @@ import CharactersPage from "./pages/CharactersPage";
 import NotFound from "./pages/NotFound";
 
 import { Navbar } from "navbar/Navbar";
-import { BrowserRouter } from "react-router-dom";
 
 // const App = () => (
 //   <BrowserRouter>
