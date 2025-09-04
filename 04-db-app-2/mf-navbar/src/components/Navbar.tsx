@@ -8,11 +8,12 @@ const navigation = [
   { name: 'About', href: '/about' },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = () => {
+export const Navbar = () => {
+  // return <nav className="bg-gray-800 p-4 text-white">Navbar - DB App</nav>
   return (
     <Disclosure
       as="nav"
@@ -65,9 +66,9 @@ const Navbar = () => {
               key={item.name}
               as="a"
               href={item.href}
-              aria-current={item.current ? 'page' : undefined}
+              aria-current={undefined}
               className={classNames(
-                item.current ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
+                'text-gray-300 hover:bg-white/5 hover:text-white',
                 'block rounded-md px-3 py-2 text-base font-medium',
               )}
             >
@@ -80,5 +81,3 @@ const Navbar = () => {
   )
 }
 
-
-export default Navbar
