@@ -5,5 +5,6 @@ export const mfConfig = {
   remotes: {
     navbar: "mf_navbar@http://localhost:3001/remoteEntry.js",
     counter: "mf_counter@http://localhost:3002/remoteEntry.js",
+    cards: "mf_cards@http://localhost:3003/remoteEntry.js",
   },
 };
