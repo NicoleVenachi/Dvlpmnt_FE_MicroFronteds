@@ -37,8 +37,8 @@ const App = () => (
         <Route path="/characters" element={<Suspense fallback={<Loader />}> <CharactersPage /></Suspense>} />
 
         {/* Default routes */}
-        <Route path="*" element={<Navigate to={'/'} />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        {/* <Route path="*" element={<Navigate to={'/'} />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   </BrowserRouter>

@@ -18,7 +18,7 @@
               <div class="card-footer">
                 <div>
                   <h3 class="name">
-                    <a href="#">
+                    <a :href="`/characters/${character.id}`">
                       <span aria-hidden="true" class="link-span"></span>
                       {{ character.name }}
                     </a>
