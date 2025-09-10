@@ -1,12 +1,13 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./index.css";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import CharactersPage from "./pages/CharactersPage";
+
+
 import NotFound from "./pages/NotFound";
 
 import { Navbar } from "navbar/Navbar";
+import Loader from "./components/Loader";
+import { lazy, Suspense } from "react";
 
 // const App = () => (
 //   <BrowserRouter>
@@ -18,17 +19,22 @@ import { Navbar } from "navbar/Navbar";
 //   </BrowserRouter>
 // );
 
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const CharactersPage = lazy(() => import("./pages/CharactersPage"));
+
 
 const App = () => (
   <BrowserRouter>
 
     <Navbar />
+    {/* <Loader /> */}
     <div className="container mx-20 mt-10">
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/characters" element={<CharactersPage />} />
+        <Route path="/" element={<Suspense fallback={<Loader />}> <HomePage /> </Suspense>} />
+        <Route path="/about" element={<Suspense fallback={<Loader />}> <AboutPage /> </Suspense>} />
+        <Route path="/characters" element={<Suspense fallback={<Loader />}> <CharactersPage /></Suspense>} />
 
         {/* Default routes */}
         <Route path="*" element={<Navigate to={'/'} />} />
