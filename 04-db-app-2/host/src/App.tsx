@@ -22,6 +22,7 @@ import { lazy, Suspense } from "react";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const CharactersPage = lazy(() => import("./pages/CharactersPage"));
+const CharacterDetailsPage = lazy(() => import("./pages/CharacterDetailsPage"));
 
 
 const App = () => (
@@ -34,7 +35,13 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Suspense fallback={<Loader />}> <HomePage /> </Suspense>} />
         <Route path="/about" element={<Suspense fallback={<Loader />}> <AboutPage /> </Suspense>} />
+
         <Route path="/characters" element={<Suspense fallback={<Loader />}> <CharactersPage /></Suspense>} />
+
+        <Route path="/characters/:id" element={<Suspense fallback={<Loader />}> <CharacterDetailsPage /></Suspense>} />
+
+
+
 
         {/* Default routes */}
         {/* <Route path="*" element={<Navigate to={'/'} />} /> */}
