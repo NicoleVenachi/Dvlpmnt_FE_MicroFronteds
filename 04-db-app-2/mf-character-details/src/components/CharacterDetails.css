@@ -1,0 +1,41 @@
+.link-to-ch {
+  background-color: #c4cff5;
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0, 0, 0, 0.1),
+    0 4px 6px -4px rgb(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+.main-ch-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-right: auto;
+  text-align: center;
+}
+
+.main-ch-container img {
+  max-height: 300px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.table-ch {
+  table-layout: auto;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-color: rgb(148, 163, 184);
+  margin: 0 auto;
+}
+
+.table-ch th,
+.table-ch td {
+  border-width: 1px;
+  padding: 8px;
+}
+
+@media (max-width: 850px) {
+  .main-ch-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
