@@ -1,9 +1,15 @@
-import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 const App = () => {
+
+  // Access the Redux state using useSelector
+  const counter = useSelector((state: any) => state.counter.value)
+
+  // Get the dispatch function using useDispatch
+  const dispatch = useDispatch();
   return (
     <div>
-      App
+      <h1> Counter: {counter}</h1>
     </div>
   )
 }
