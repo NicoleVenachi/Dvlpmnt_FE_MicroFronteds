@@ -4,4 +4,12 @@ export declare const useCounterStore: () => {
         payload: undefined;
         type: "counter/increment";
     };
+    decrement: () => {
+        payload: undefined;
+        type: "counter/decrement";
+    };
+    clear: () => {
+        payload: undefined;
+        type: "counter/clear";
+    };
 };
