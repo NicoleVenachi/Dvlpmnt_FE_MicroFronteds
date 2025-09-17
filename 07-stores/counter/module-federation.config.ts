@@ -4,5 +4,8 @@ export const mfConfig = {
     "./Counter": "./src/components/Counter.tsx",
   },
   shared: ["react", "react-dom"],
+  remotes: {
+    storeMF: "store@http://localhost:5050/remoteEntry.js",
+  },
   filename: "remoteEntry.js",
 };

@@ -4,6 +4,9 @@ import { store } from "./store/index"
 interface StoreProviderProps {
   children: React.ReactNode
 }
+
+export { useCounterStore } from "./store/useCounterStore"
+
 export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
   return <Provider store={store}>{children}</Provider>
 }

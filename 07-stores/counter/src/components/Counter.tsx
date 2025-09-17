@@ -1,12 +1,13 @@
 import React from 'react'
-
+import { useCounterStore } from 'storeMF/Store'
 import './counter.css'
 const Counter = () => {
+  const { counter, increment } = useCounterStore();
   return (
     <>
-      <h3> Counter: 10 </h3>
+      <h3> Counter: {counter.value} </h3>
 
-      <button> Increment </button>
+      <button onClick={() => increment()}> Increment </button>
       <button> Decrement </button>
     </>
   )
