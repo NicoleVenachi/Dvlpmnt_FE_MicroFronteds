@@ -1,5 +1,8 @@
 export const mfConfig = {
   name: "counter",
-  exposes: {},
+  exposes: {
+    "./Counter": "./src/components/Counter.tsx",
+  },
   shared: ["react", "react-dom"],
+  filename: "remoteEntry.js",
 };
