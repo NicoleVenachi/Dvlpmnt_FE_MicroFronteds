@@ -6,6 +6,6 @@ export const mfConfig = {
   remotes: {
     storeMF: "store@http://localhost:5050/remoteEntry.js",
   },
-  shared: ["react", "react-dom"],
+  shared: ["react", "react-dom", "sweetalert2"],
   filename: "remoteEntry.js",
 };
